@@ -4,16 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="A personal web design and résumé website showing responsive layouts, HTML, CSS, JavaScript, and design studies.">
   <meta name="author" content="">
 
-  <title>Portfolio</title>
-
-
-
-  <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <title>Web Designer — Personal Portfolio &amp; Résumé</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -56,21 +51,17 @@
     /*  */
   </style>
 
+  <link rel="canonical" href="https://github505050.github.io/Portfolio/">
 </head>
 
 <body>
 
   <!-- MENU -->
-  <nav class="navbar navbar-expand-sm navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="index.html"><i class="fa fa-user" style="font-size:36px"></i> Portfolio</a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        <span class="navbar-toggler-icon"></span>
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
@@ -90,10 +81,7 @@
 
         <ul class="navbar-nav ml-lg-auto">
           <div class="ml-lg-4">
-            <div class="color-mode d-lg-flex justify-content-center align-items-center">
-              <i class="fas fa-lightbulb"></i>
-
-            </div>
+            <div class="color-mode d-lg-flex justify-content-center align-items-center"><button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"><i class="fas fa-lightbulb" aria-hidden="true"></i></button></div>
           </div>
         </ul>
       </div>
@@ -110,11 +98,11 @@
             <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
             <h1 class="animated animated-text">
               <span class="mr-2">Hey folks, I'm</span>
-              <div class="animated-info">
+              <span class="animated-info">
                 <span class="animated-item">SUKHJINDRA</span>
                 <span class="animated-item">Web Designer</span>
                 <span class="animated-item">UI Specialist</span>
-              </div>
+              </span>
             </h1>
 
             <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces
@@ -122,14 +110,14 @@
 
             <div class="custom-btn-group mt-4">
               <!-- <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a> -->
-              <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
+              <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Contact me</a>
             </div>
           </div>
         </div>
 
         <div class="col-lg-5 col-md-12 col-12">
           <div class="about-image svg">
-            <img src="images/undraw/IMG-1705-veed-remove-background.png" class="img-fluid" alt="svg image">
+            <img src="images/undraw/IMG-1705-veed-remove-background.png" class="img-fluid" alt="Portfolio portrait" loading="eager">
           </div>
         </div>
 
@@ -137,8 +125,6 @@
     </div>
   </section>
   <!-- About Me -->
-
-  <body>
     <div class="container-about">
       <div class="about-me">
         <h2>About Me</h2>
@@ -156,46 +142,22 @@
           <div class="col-lg-11 text-center mx-auto col-12">
 
             <div class="col-lg-8 mx-auto">
-              <h2>Things I have designed for digital media agencies</h2>
+              <h2>Visual design studies &amp; selected work</h2>
             </div>
 
-            <div class="owl-carousel owl-theme">
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/project/project-image01.png" class="img-fluid" alt="project image">
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/project/project-image02.png" class="img-fluid" alt="project image">
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/project/project-image03.png" class="img-fluid" alt="project image">
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/project/project-image04.png" class="img-fluid" alt="project image">
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="project-info">
-                  <img src="images/project/project-image05.png" class="img-fluid" alt="project image">
-                </div>
+            <p class="gallery-note">These are visual design samples presented to demonstrate layout and visual skills. Individual image authorship and client attribution should be confirmed before use as paid-client examples.</p>
+              <div class="project-gallery" aria-label="Selected image gallery">
+                <figure class="study-card"><img src="images/project/project-image01.png" alt="Visual layout study 1" loading="lazy" decoding="async"><figcaption><strong>Design sample 01</strong><span>Visual layout study</span></figcaption></figure>
+                <figure class="study-card"><img src="images/project/project-image02.png" alt="Visual layout study 2" loading="lazy" decoding="async"><figcaption><strong>Design sample 02</strong><span>Visual layout study</span></figcaption></figure>
+                <figure class="study-card"><img src="images/project/project-image03.png" alt="Visual layout study 3" loading="lazy" decoding="async"><figcaption><strong>Design sample 03</strong><span>Visual layout study</span></figcaption></figure>
+                <figure class="study-card"><img src="images/project/project-image04.png" alt="Visual layout study 4" loading="lazy" decoding="async"><figcaption><strong>Design sample 04</strong><span>Visual layout study</span></figcaption></figure>
+                <figure class="study-card"><img src="images/project/project-image05.png" alt="Visual layout study 5" loading="lazy" decoding="async"><figcaption><strong>Design sample 05</strong><span>Visual layout study</span></figcaption></figure>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
-
     <!-- FEATURES -->
     <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
       <div class="container">
@@ -210,7 +172,7 @@
                   <span>2023</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Freelance Web Designer</span><small> Fiver and freelancing</small></h3>
+                  <h3><span>Freelance Web Designer</span><small> Independent freelance projects</small></h3>
                   <p> Design and develop visually appealing and user-friendly websites.
                     Implement responsive design techniques to ensure your websites look and function well on different
                     devices and screen sizes.</p>
@@ -233,7 +195,7 @@
                   <span>2020</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>video Editor</span><small>freelancer </small></h3>
+                  <h3><span>Video Editor</span><small>freelancer </small></h3>
                   <p>Edit and assemble video footage, applying transitions, effects, and titles to create polished
                     videos.Enhance video quality through color correction, grading, and other post-production
                     techniques.</p>
@@ -246,7 +208,7 @@
           </div>
 
           <div class="col-lg-6 col-12">
-            <h2 class="mb-4 mobile-mt-2">Educations</h2>
+            <h2 class="mb-4 mobile-mt-2">Education &amp; Training</h2>
 
             <div class="timeline">
               <div class="timeline-wrapper">
@@ -254,7 +216,7 @@
                   <span>2023</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Web Design </span><small>Master Design</small></h3>
+                  <h3><span>Web Design </span><small>Design and UX studies</small></h3>
                   <p>I've learned about the principles of design, user experience (UX), and user interface (UI)
                     design.I've become proficient in using design tools to create mockups and wireframes that serve as
                     the foundation for building user-friendly websites.</p>
@@ -266,10 +228,10 @@
                   <span>2018</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Adobephotoshop and Premiere Pro</span><small>adobe tools expert</small></h3>
+                  <h3><span>Adobe Photoshop and Premiere Pro</span><small>Adobe design tools</small></h3>
                   <p>I learned to Retouch and enhance
                     photographs, adjusted colors, and designed intricate visuals in photoshop and Gained expertise in
-                    video editing and post-production throught the premere pro.
+                    video editing and post-production through Premiere Pro.
                   </p>
                 </div>
               </div>
@@ -334,7 +296,7 @@
     <section id="service" class="section">
       <div class="container text-center">
         <h2 class="subtitle">Service</h2>
-        <h3 class="section-title mb-4">What I Do</h3>
+        <h3 class="section-title mb-4">Design Skills &amp; Services</h3>
         <hr style="font-weight: bold;">
 
         <div class="row">
@@ -358,7 +320,7 @@
             <div class="custom-card card border">
               <div class="card-body">
                 <i class="fa fa-mobile icons" style="font-size:48px;color:red"></i>
-                <h5>Photo video Edit</h5>
+                <h5>Photo &amp; Video Editing</h5>
               </div>
             </div>
           </div>
@@ -375,103 +337,21 @@
     </section>
     <!-- CONTACT -->
     <section class="contact py-5" id="contact">
-      <div class="container">
-        <div class="row">
-
-
-
-          <div class="col-lg-6 col-12">
-            <div class="contact-form">
-              <h2 class="mb-4">Interested to work together? Let's talk</h2>
-              <form action="" method="get">
-                <div class="row">
-                  <div class="col-lg-6 col-12">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                  </div>
-
-                  <div class="col-lg-6 col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                  </div>
-
-                  <div class="col-12">
-                    <textarea name="message" rows="6" class="form-control" placeholder="Message" minlength="100"
-                      required></textarea>
-                  </div>
-
-                  <div class="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" class="form-control submit-btn" value="Send" id="SendButton">
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="col-12">
-              <div class="alert" id="successAlert" style="display: none;">Your message has been sent successfully.</div>
-            </div>
-          </div>
+      <div class="container"><div class="contact-panel">
+        <h2>Let's connect</h2>
+        <p>This is a static GitHub Pages site. For enquiries, use the link below to open your own email app. No message is transmitted or stored by the website itself.</p>
+        <a class="btn custom-btn custom-btn-bg" href="mailto:sukhjindrasinghind89@gmail.com?subject=Website%20Enquiry">Write an email</a>
+      </div></div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="footer py-5">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-12 col-12">
-            <p class="copyright-text text-center">Copyright &copy; Sukhjindra . All rights reserved</p>
-            <p class="copyright-text text-center">Designed by <a rel="nofollow"
-                href="https://www.instagram.com/am_sukhi_/">Sukhjindra</a></p>
-          </div>
-          <div class="social-icons text-center">
-            <a href="mailto:sukhjindrasinghind89@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/your-instagram-link" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/login" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-        </div>
+    <footer class="footer py-5"><div class="container text-center">
+      <p class="copyright-text">Personal Portfolio. All rights reserved.</p>
+      <p class="copyright-text">Designed by Sukhjindra</p>
+      <div class="social-icons">
+        <a href="mailto:sukhjindrasinghind89@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/am_sukhi_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
       </div>
-    </footer>
-
-
-
-
-
-    <script>
-      const sendButton = document.getElementById('sendButton');
-      const contactForm = document.getElementById('contactForm');
-      const nameInput = document.getElementById('nameInput');
-      const emailInput = document.getElementById('emailInput');
-      const messageInput = document.getElementById('messageInput');
-
-      sendButton.addEventListener('click', function (event) {
-        if (!nameInput.value || !emailInput.value || !messageInput.value) {
-          event.preventDefault(); // Prevent form submission
-          alert('Please fill in all required fields.');
-        } else {
-          successAlert.style.display = 'block';
-          alert('Your message has been sent successfully.');
-        }
-      });
-    </script>
-
-    <script src="js/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
-      integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/Headroom.js"></script>
-
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/smoothscroll.js"></script>
+    </div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-
-
-    </script>
-  </body>
-
+</body>
 </html>
