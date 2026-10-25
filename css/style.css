@@ -982,3 +982,33 @@ h5 {
 .footer {
   background-color: rgb(228, 228, 228);
 }
+
+/* Accessible, responsive portfolio fixes */
+html{scroll-padding-top:84px}
+.navbar{position:relative;z-index:11}
+.navbar .navbar-toggler{border:1px solid #bdc5cf;padding:10px 12px}
+.navbar .navbar-toggler-icon{width:1.25rem;height:1.25rem}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd2d7;background:#fff;color:#333;padding:10px;border-radius:50%;height:40px;width:40px}
+.project-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;text-align:left}
+.study-card{margin:0;overflow:hidden;border:1px solid #dfe4e9;border-radius:15px;background:#fff;box-shadow:0 8px 23px #19293513}
+.study-card img{display:block;width:100%;height:190px;object-fit:cover}
+.study-card figcaption{display:grid;gap:4px;padding:17px}
+.study-card strong{font-size:16px;color:#293645}
+.study-card span{font-size:13px;color:#667685}
+.gallery-note{margin:12px auto 4px;max-width:780px;font-size:14px;line-height:1.6}
+.contact-panel{max-width:800px;margin:auto;border:1px solid #e0e5ea;border-radius:18px;padding:30px;background:#f9fafb}
+.contact-panel p{font-size:16px;margin:14px 0 20px}
+#project h2{line-height:1.2}
+#service{background:#f2f4f7}
+#service .custom-card{width:100%;max-width:230px}
+#service .custom-card:hover{background:#fff2c2}
+.skills-section{max-width:1140px;margin:30px auto}
+@media(max-width:991px){.project-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.navbar-collapse{background:#fff;padding:10px}.full-screen{padding-top:3rem}}
+@media(max-width:600px){.project-gallery{grid-template-columns:1fr}.study-card img{height:auto;max-height:300px;object-fit:contain}.skills-section{margin:20px 16px}.skills-list li{width:100%}.contact-panel{padding:22px}.navbar-brand{font-size:1rem}.animated-info{min-width:185px}}
+body.dark-mode{background:#161f2a;color:#eef2f5}
+body.dark-mode .navbar,body.dark-mode .footer{background:#273645}
+body.dark-mode .navbar-brand,body.dark-mode .nav-link,body.dark-mode h1,body.dark-mode h2,body.dark-mode h3,body.dark-mode p,body.dark-mode .skill-title{color:#f0f5f8!important}
+body.dark-mode .study-card,body.dark-mode .contact-panel,body.dark-mode .skills-section,body.dark-mode .navbar-collapse{background:#253445;border-color:#45586b}
+body.dark-mode .study-card strong,body.dark-mode .study-card span{color:#eef3f6}
+body.dark-mode .theme-toggle{background:#27394a;color:#f8fafc}
+@media(prefers-reduced-motion:reduce){.animated-item{animation:none;position:static;opacity:1}.animated-item:not(:first-child){display:none}*{scroll-behavior:auto!important}}
