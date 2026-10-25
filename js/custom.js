@@ -1,36 +1,14 @@
-(function ($) {
-
-  "use strict";
-
-    // COLOR MODE
-    $('.color-mode').click(function(){
-        $('.color-mode-icon').toggleClass('active')
-        $('body').toggleClass('dark-mode')
-    })
-
-    // HEADER
-    $(".navbar").headroom();
-
-    // PROJECT CAROUSEL
-    $('.owl-carousel').owlCarousel({
-    	items: 1,
-	    loop:true,
-	    margin:10,
-	    nav:true
-	});
-
-    // SMOOTHSCROLL
-    $(function() {
-      $('.nav-link, .custom-btn-link').on('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top - 49
-        }, 1000);
-        event.preventDefault();
-      });
-    });  
-
-    // TOOLTIP
-    $('.social-links a').tooltip();
-
-})(jQuery);
+/* Small dependency-free enhancements for the personal portfolio. */
+document.addEventListener('DOMContentLoaded',()=>{
+  const button=document.querySelector('.theme-toggle');
+  if(button) button.addEventListener('click',()=>{
+    const pressed=document.body.classList.toggle('dark-mode');
+    button.setAttribute('aria-pressed',String(pressed));
+  });
+  const collapsible=document.querySelector('#navbarNav');
+  document.querySelectorAll('.navbar .nav-link[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
+    if(!collapsible?.classList.contains('show'))return;
+    if(window.bootstrap?.Collapse)window.bootstrap.Collapse.getOrCreateInstance(collapsible,{toggle:false}).hide();
+    else collapsible.classList.remove('show');
+  }));
+});
