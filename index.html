@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="A personal web design and résumé website showing responsive layouts, HTML, CSS, JavaScript, and design studies.">
-  <meta name="author" content="">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Personal Web Design Portfolio | Front-End & Responsive Websites">
+  <meta property="og:description" content="Personal front-end design projects, responsive layouts, HTML, CSS and JavaScript.">
 
   <title>Web Designer — Personal Portfolio &amp; Résumé</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <style>
@@ -55,11 +56,12 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- MENU -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><i class="fa fa-user" style="font-size:36px"></i> Portfolio</a>
+      <a class="navbar-brand" href="#about" aria-label="Portfolio, back to the top"><i class="fas fa-code" aria-hidden="true"></i><span> Portfolio<span class="brand-dot">.</span></span></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -79,15 +81,16 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ml-lg-auto">
+        <ul class="navbar-nav ms-lg-auto">
           <div class="ml-lg-4">
-            <div class="color-mode d-lg-flex justify-content-center align-items-center"><button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"><i class="fas fa-lightbulb" aria-hidden="true"></i></button></div>
+            <div class="color-mode d-flex justify-content-center align-items-center"><button class="theme-toggle" type="button" aria-label="Enable dark mode" aria-pressed="false" title="Switch colour theme"><i class="fas fa-moon" aria-hidden="true"></i></button></div>
           </div>
         </ul>
       </div>
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- ABOUT -->
   <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
     <div class="container">
@@ -95,22 +98,22 @@
 
         <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
           <div class="about-text">
-            <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+            <small class="small-text">PERSONAL PROJECT · RESPONSIVE WEB DESIGN</small>
             <h1 class="animated animated-text">
               <span class="mr-2">Hey folks, I'm</span>
               <span class="animated-info">
                 <span class="animated-item">SUKHJINDRA</span>
                 <span class="animated-item">Web Designer</span>
-                <span class="animated-item">UI Specialist</span>
+                <span class="animated-item">Front-End Creator</span>
               </span>
             </h1>
 
-            <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces
-              and web development.</p>
+            <p class="intro-copy">I create clean, mobile-friendly website layouts and refine existing pages with HTML, CSS, JavaScript and Bootstrap. Explore the design work and practical front-end skills shown below.</p>
 
             <div class="custom-btn-group mt-4">
               <!-- <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a> -->
-              <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Contact me</a>
+              <a href="#project" class="btn custom-btn custom-btn-bg custom-btn-link">Explore projects <span aria-hidden="true">↗</span></a>
+              <a href="#contact" class="btn custom-btn custom-btn-outline">Contact</a>
             </div>
           </div>
         </div>
@@ -127,11 +130,10 @@
   <!-- About Me -->
     <div class="container-about">
       <div class="about-me">
-        <h2>About Me</h2>
-        <p>Hello there! I'm a passionate and creative web designer with a solid foundation in Adobe Photoshop, Premiere
-          Pro, and a strong grasp of programming languages such as Java, HTML, and CSS. With a keen eye for aesthetics
-          and
-          a dedication to delivering exceptional user experiences, I'm excited to bring my skills to your projects.</p>
+        <span class="section-eyebrow">ABOUT THIS PORTFOLIO</span>
+        <h2>Design with clarity in mind.</h2>
+        <p>This personal website demonstrates page structure, responsive styling, visual presentation and simple user interactions. My focus is practical: readable layouts, usable navigation and polished details on desktop and mobile.</p>
+        <p class="portfolio-disclosure"><i class="fas fa-info-circle" aria-hidden="true"></i> This is a personal design showcase. Some résumé details and visual examples are illustrative or may be outdated; they should not be treated as verified client work or employment history.</p>
       </div>
     </div>
     <!-- PROJECTS -->
@@ -142,10 +144,16 @@
           <div class="col-lg-11 text-center mx-auto col-12">
 
             <div class="col-lg-8 mx-auto">
-              <h2>Visual design studies &amp; selected work</h2>
+              <span class="section-eyebrow">SELECTED WORK</span>
+                <h2>Projects &amp; design studies</h2>
             </div>
 
-            <p class="gallery-note">These are visual design samples presented to demonstrate layout and visual skills. Individual image authorship and client attribution should be confirmed before use as paid-client examples.</p>
+            <p class="gallery-note">Explore two personal web projects, followed by visual layout samples. The image gallery is for presentation practice, not a record of paid client commissions.</p>
+              <div class="featured-projects">
+                <article class="featured-project"><span class="project-number">01 / FRONT-END</span><h3>Personal Portfolio Website</h3><p>Responsive résumé and project layout with mobile navigation, design gallery and interactive theme controls.</p><div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span></div><a href="upwork-showcase.html" aria-label="View the personal portfolio design case study">View design case study <span aria-hidden="true">↗</span></a></article>
+                <article class="featured-project"><span class="project-number">02 / LEARNING PLATFORM</span><h3>French Classroom</h3><p>A personal learning-platform project showcasing lesson organisation, vocabulary, practice sections and interface design.</p><div class="project-tech"><span>Web UI</span><span>Responsive Layout</span><span>Learning Tools</span></div><a href="https://github.com/Github505050/french-classroom" target="_blank" rel="noopener noreferrer" aria-label="View the French Classroom project repository on GitHub">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+              </div>
+              <h3 class="gallery-heading">Visual design gallery</h3>
               <div class="project-gallery" aria-label="Selected image gallery">
                 <figure class="study-card"><img src="images/project/project-image01.png" alt="Visual layout study 1" loading="lazy" decoding="async"><figcaption><strong>Design sample 01</strong><span>Visual layout study</span></figcaption></figure>
                 <figure class="study-card"><img src="images/project/project-image02.png" alt="Visual layout study 2" loading="lazy" decoding="async"><figcaption><strong>Design sample 02</strong><span>Visual layout study</span></figcaption></figure>
@@ -153,7 +161,6 @@
                 <figure class="study-card"><img src="images/project/project-image04.png" alt="Visual layout study 4" loading="lazy" decoding="async"><figcaption><strong>Design sample 04</strong><span>Visual layout study</span></figcaption></figure>
                 <figure class="study-card"><img src="images/project/project-image05.png" alt="Visual layout study 5" loading="lazy" decoding="async"><figcaption><strong>Design sample 05</strong><span>Visual layout study</span></figcaption></figure>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -164,41 +171,37 @@
         <div class="row">
 
           <div class="col-lg-6 col-12">
-            <h2 class="mb-4">Experiences</h2>
+            <h2 class="mb-4">Practice &amp; Projects</h2>
+            <p class="timeline-note">Personal work and design practice, not a list of commissioned jobs.</p>
 
             <div class="timeline">
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2023</span>
+                  <span>01</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Freelance Web Designer</span><small> Independent freelance projects</small></h3>
-                  <p> Design and develop visually appealing and user-friendly websites.
-                    Implement responsive design techniques to ensure your websites look and function well on different
-                    devices and screen sizes.</p>
+                  <h3><span>Responsive Portfolio</span><small>Personal project</small></h3>
+                  <p>Designed and refined a responsive front-end portfolio with project previews, mobile navigation and theme controls.</p>
                 </div>
               </div>
 
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2022</span>
+                  <span>02</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Photoshop Editor</span> <small> freelancing </small></h3>
-                  <p>Design custom graphics, banners, logos, and other visual elements for websites and videos.Edit and
-                    retouch photos to enhance their quality for web or video use.</p>
+                  <h3><span>Learning Platform UI</span><small>Personal project</small></h3>
+                  <p>Worked on interface structure and design presentation for a French learning website.</p>
                 </div>
               </div>
 
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2020</span>
+                  <span>03</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Video Editor</span><small>freelancer </small></h3>
-                  <p>Edit and assemble video footage, applying transitions, effects, and titles to create polished
-                    videos.Enhance video quality through color correction, grading, and other post-production
-                    techniques.</p>
+                  <h3><span>Visual Layout Studies</span><small>Design practice</small></h3>
+                  <p>Explored composition, spacing, imagery and typography through visual design examples.</p>
                 </div>
               </div>
 
@@ -208,43 +211,37 @@
           </div>
 
           <div class="col-lg-6 col-12">
-            <h2 class="mb-4 mobile-mt-2">Education &amp; Training</h2>
+            <h2 class="mb-4 mobile-mt-2">Learning &amp; Tools</h2>
+            <p class="timeline-note">A snapshot of subjects and tools used for design practice.</p>
 
             <div class="timeline">
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2023</span>
+                  <span>WEB</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Web Design </span><small>Design and UX studies</small></h3>
-                  <p>I've learned about the principles of design, user experience (UX), and user interface (UI)
-                    design.I've become proficient in using design tools to create mockups and wireframes that serve as
-                    the foundation for building user-friendly websites.</p>
+                  <h3><span>Web Design</span><small>Diploma studies</small></h3>
+                  <p>Web layouts, user experience fundamentals and design methods for websites and interfaces.</p>
                 </div>
               </div>
 
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2018</span>
+                  <span>UI</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>Adobe Photoshop and Premiere Pro</span><small>Adobe design tools</small></h3>
-                  <p>I learned to Retouch and enhance
-                    photographs, adjusted colors, and designed intricate visuals in photoshop and Gained expertise in
-                    video editing and post-production through Premiere Pro.
-                  </p>
+                  <h3><span>Visual Design Tools</span><small>Photoshop &amp; Premiere Pro</small></h3>
+                  <p>Image editing, basic visual composition and presentation assets for design projects.</p>
                 </div>
               </div>
 
               <div class="timeline-wrapper">
                 <div class="timeline-yr">
-                  <span>2015</span>
+                  <span>DEV</span>
                 </div>
                 <div class="timeline-info">
-                  <h3><span>HTML5 and CSS3</span><small>Proficient in HTML5, CSS3, and JavaScript</small></h3>
-                  <p> I learned how to structure web content using HTML5 elements, creating headings, paragraphs,
-                    lists, and more. I understand the importance of semantic HTML for both search engine optimization
-                    (SEO) and accessibility.</p>
+                  <h3><span>Front-End Foundations</span><small>HTML, CSS &amp; JavaScript</small></h3>
+                  <p>Page structure, responsive styles, browser interactions and semantic HTML fundamentals.</p>
                 </div>
               </div>
 
@@ -255,39 +252,17 @@
       </div>
     </section>
     <!-- Skills -->
-    <section class="skills-section">
-      <h2>Skills</h2>
+    <section class="skills-section" id="skills" aria-labelledby="skills-heading">
+      <span class="section-eyebrow">FRONT-END TOOLKIT</span>
+      <h2 id="skills-heading">Skills I work with</h2>
+      <p class="section-subtitle">Practical tools and techniques for straightforward website projects.</p>
       <ul class="skills-list">
-        <li>
-          <span class="skill-title">Web Design</span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 80%;"></div>
-          </div>
-        </li>
-        <li>
-          <span class="skill-title">Photoshop & premiere pro</span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 95%;"></div>
-          </div>
-        </li>
-        <li>
-          <span class="skill-title">Java </span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 70%;"></div>
-          </div>
-        </li>
-        <li>
-          <span class="skill-title">Html & Css </span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 85%;"></div>
-          </div>
-        </li>
-        <li>
-          <span class="skill-title">Visual Content</span>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 100%;"></div>
-          </div>
-        </li>
+        <li><i class="fab fa-html5" aria-hidden="true"></i><span>HTML5 &amp; semantic pages</span></li>
+        <li><i class="fab fa-css3-alt" aria-hidden="true"></i><span>CSS3 &amp; layout styling</span></li>
+        <li><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript interactions</span></li>
+        <li><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Mobile responsive design</span></li>
+        <li><i class="fab fa-bootstrap" aria-hidden="true"></i><span>Bootstrap layouts</span></li>
+        <li><i class="fas fa-tools" aria-hidden="true"></i><span>Website updates &amp; fixes</span></li>
       </ul>
     </section>
 
@@ -295,40 +270,41 @@
 
     <section id="service" class="section">
       <div class="container text-center">
-        <h2 class="subtitle">Service</h2>
-        <h3 class="section-title mb-4">Design Skills &amp; Services</h3>
-        <hr style="font-weight: bold;">
+        <span class="section-eyebrow">HOW I CAN HELP</span>
+        <h2 class="section-title mb-4">Small website projects &amp; improvements</h2>
+        <p class="section-subtitle">Clear, focused front-end work—from a single page to simple visual fixes.</p>
+        
 
         <div class="row">
           <div class="col-sm-6 col-md-3 mb-4">
             <div class="custom-card card border">
               <div class="card-body">
-                <i class="fa fa-bank icons" style="font-size:48px;color:red"></i>
-                <h5>UI/UX Design</h5>
+                <i class="fas fa-pencil-ruler icons" aria-hidden="true"></i>
+                <h3>UI Layout</h3><p>Improve spacing, typography and structure.</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-4">
             <div class="custom-card card border">
               <div class="card-body">
-                <i class="fa fa-laptop icons" style="font-size:48px;color:red"></i>
-                <h5>Web Design</h5>
+                <i class="fas fa-laptop-code icons" aria-hidden="true"></i>
+                <h3>Website Design</h3><p>Build clear and modern front-end pages.</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-4">
             <div class="custom-card card border">
               <div class="card-body">
-                <i class="fa fa-mobile icons" style="font-size:48px;color:red"></i>
-                <h5>Photo &amp; Video Editing</h5>
+                <i class="fas fa-mobile-alt icons" aria-hidden="true"></i>
+                <h3>Mobile Styling</h3><p>Fix layouts for smaller screens.</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-4">
             <div class="custom-card card border">
               <div class="card-body">
-                <i class="fa fa-bar-chart icons" style="font-size:48px;color:red"></i>
-                <h5>SEO</h5>
+                <i class="fas fa-wrench icons" aria-hidden="true"></i>
+                <h3>HTML/CSS Fixes</h3><p>Polish sections and repair visual bugs.</p>
               </div>
             </div>
           </div>
@@ -338,13 +314,16 @@
     <!-- CONTACT -->
     <section class="contact py-5" id="contact">
       <div class="container"><div class="contact-panel">
-        <h2>Let's connect</h2>
-        <p>This is a static GitHub Pages site. For enquiries, use the link below to open your own email app. No message is transmitted or stored by the website itself.</p>
+        <span class="section-eyebrow">GET IN TOUCH</span>
+        <h2>Have a website idea?</h2>
+        <p>This website is hosted on GitHub Pages. The email link below opens your mail app; this site does not collect or store contact messages.</p>
+        <p class="contact-note">If you found my work through Upwork, please contact me through Upwork messages rather than the email link.</p>
         <a class="btn custom-btn custom-btn-bg" href="mailto:sukhjindrasinghind89@gmail.com?subject=Website%20Enquiry">Write an email</a>
       </div></div>
     </section>
+  </main>
     <footer class="footer py-5"><div class="container text-center">
-      <p class="copyright-text">Personal Portfolio. All rights reserved.</p>
+      <p class="copyright-text">© 2026 Personal Portfolio · Design demonstration</p>
       <p class="copyright-text">Designed by Sukhjindra</p>
       <div class="social-icons">
         <a href="mailto:sukhjindrasinghind89@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
@@ -352,6 +331,6 @@
       </div>
     </div></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js" defer></script>
 </body>
 </html>
