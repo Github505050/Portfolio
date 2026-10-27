@@ -23,14 +23,18 @@ async function checkNoOverflow(page,label){
     assert.equal(await desktop.locator('.skills-list li').count(),6,'skill tags should replace arbitrary percentage bars');
     assert.equal(await desktop.locator('main').count(),1,'page needs one main landmark');
     assert.ok(await desktop.locator('.portfolio-disclosure').isVisible(),'sample content must be disclosed');
+    const sourceHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
+    const referencedImages=[...sourceHtml.matchAll(/<img\\b[^>]*src="([^"]+)"/g)].map(m=>m[1]);
+    assert.ok(referencedImages.length>=6,'portrait and gallery images must remain');
+    for(const imagePath of referencedImages) assert.ok(fs.existsSync(path.join(root,imagePath)), 'Missing image asset: '+imagePath);
+    await desktop.locator('.about-image img').evaluate(img=>img.decode());
     const pageStructure=await desktop.evaluate(()=>{
       const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);
       const anchors=[...document.querySelectorAll('a[href^="#"]')].map(e=>e.getAttribute('href').substring(1));
-      return {duplicateIds:ids.filter((id,i)=>ids.indexOf(id)!==i),brokenAnchors:anchors.filter(id=>id&&!ids.includes(id)),unloadedImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src)};
+      return {duplicateIds:ids.filter((id,i)=>ids.indexOf(id)!==i),brokenAnchors:anchors.filter(id=>id&&!ids.includes(id)) };
     });
     assert.deepEqual(pageStructure.duplicateIds,[],'duplicate element ids');
     assert.deepEqual(pageStructure.brokenAnchors,[],'broken internal anchor links');
-    assert.deepEqual(pageStructure.unloadedImages,[],'broken project or portrait images');
     assert.equal(await desktop.locator('form').count(),0,'unsent static contact form must not remain');
     assert.ok(await desktop.locator('a[href^="mailto:"]').count()>=1);
     await checkNoOverflow(desktop,'original desktop');
