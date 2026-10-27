@@ -24,7 +24,7 @@ async function checkNoOverflow(page,label){
     assert.equal(await desktop.locator('main').count(),1,'page needs one main landmark');
     assert.ok(await desktop.locator('.portfolio-disclosure').isVisible(),'sample content must be disclosed');
     const sourceHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
-    const referencedImages=[...sourceHtml.matchAll(/<img\\b[^>]*src="([^"]+)"/g)].map(m=>m[1]);
+    const referencedImages=[...sourceHtml.matchAll(/src="(images[^"]+)"/g)].map(m=>m[1]);
     assert.ok(referencedImages.length>=6,'portrait and gallery images must remain');
     for(const imagePath of referencedImages) assert.ok(fs.existsSync(path.join(root,imagePath)), 'Missing image asset: '+imagePath);
     await desktop.locator('.about-image img').evaluate(img=>img.decode());
