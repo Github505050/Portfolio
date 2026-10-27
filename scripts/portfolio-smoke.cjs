@@ -52,6 +52,11 @@ async function checkNoOverflow(page,label){
     assert.doesNotMatch(html,/mailto:|instagram\.com|linkedin\.com|@gmail|@outlook|sukhjindra|sukhjindrasingh|href="https?:\/\//i,'Upwork-safe page must have no personal contact details or external links');
     assert.equal(await desktop.locator('a[href^="http"]').count(),0);
     await desktop.locator('button[data-tab="home"]').click();
+    await desktop.locator('button[data-tab="home"]').press('ArrowRight');
+    assert.ok(await desktop.locator('[data-screen="gallery"]').isVisible(),'Right arrow should select gallery tab');
+    assert.equal(await desktop.locator('button[data-tab="gallery"]').getAttribute('aria-selected'),'true');
+    await desktop.locator('button[data-tab="gallery"]').press('Home');
+    assert.ok(await desktop.locator('[data-screen="home"]').isVisible(),'Home key should select first tab');
     await desktop.screenshot({path:path.join(output,'01-upwork-cover.png'),animations:'disabled'});
     await desktop.locator('.browser').screenshot({path:path.join(output,'02-homepage-layout.png'),animations:'disabled'});
     for(const [tab,file] of [['gallery','03-project-gallery.png'],['resume','04-resume-layout.png']]){
