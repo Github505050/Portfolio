@@ -19,9 +19,29 @@ async function checkNoOverflow(page,label){
     await desktop.goto(url('index.html'),{waitUntil:'domcontentloaded'});
     await desktop.locator('.project-gallery .study-card').first().waitFor();
     assert.equal(await desktop.locator('.project-gallery .study-card').count(),5);
+    assert.equal(await desktop.locator('.featured-project').count(),2,'real personal projects should be featured');
+    assert.equal(await desktop.locator('.skills-list li').count(),6,'skill tags should replace arbitrary percentage bars');
+    assert.equal(await desktop.locator('main').count(),1,'page needs one main landmark');
+    assert.ok(await desktop.locator('.portfolio-disclosure').isVisible(),'sample content must be disclosed');
+    const pageStructure=await desktop.evaluate(()=>{
+      const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);
+      const anchors=[...document.querySelectorAll('a[href^="#"]')].map(e=>e.getAttribute('href').substring(1));
+      return {duplicateIds:ids.filter((id,i)=>ids.indexOf(id)!==i),brokenAnchors:anchors.filter(id=>id&&!ids.includes(id)),unloadedImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src)};
+    });
+    assert.deepEqual(pageStructure.duplicateIds,[],'duplicate element ids');
+    assert.deepEqual(pageStructure.brokenAnchors,[],'broken internal anchor links');
+    assert.deepEqual(pageStructure.unloadedImages,[],'broken project or portrait images');
     assert.equal(await desktop.locator('form').count(),0,'unsent static contact form must not remain');
     assert.ok(await desktop.locator('a[href^="mailto:"]').count()>=1);
     await checkNoOverflow(desktop,'original desktop');
+    const themeToggle=desktop.locator('.theme-toggle');
+    await themeToggle.click();
+    assert.equal(await desktop.locator('body.dark-mode').count(),1,'dark theme toggle did not apply');
+    assert.equal(await themeToggle.getAttribute('aria-pressed'),'true');
+    await desktop.reload({waitUntil:'domcontentloaded'});
+    assert.equal(await desktop.locator('body.dark-mode').count(),1,'theme preference not retained on reload');
+    await desktop.locator('.theme-toggle').click();
+    assert.equal(await desktop.locator('body.dark-mode').count(),0,'light theme toggle did not apply');
     await desktop.goto(url('upwork-showcase.html'),{waitUntil:'load'});
     await desktop.locator('.desktop').waitFor();
     const html=fs.readFileSync(path.join(root,'upwork-showcase.html'),'utf8');
@@ -44,6 +64,9 @@ async function checkNoOverflow(page,label){
     assert.ok(await mobile.locator('[data-screen="mobile"]').isVisible());
     await mobile.locator('.phone').screenshot({path:path.join(output,'05-mobile-layout.png'),animations:'disabled'});
     await mobile.goto(url('index.html'),{waitUntil:'domcontentloaded'});
+    assert.equal(await mobile.locator('.featured-project').count(),2);
+    assert.ok(await mobile.locator('.skip-link').count()===1);
+    assert.ok(await mobile.locator('.navbar-toggler-icon').isVisible());
     await checkNoOverflow(mobile,'original mobile');
     const toggle=mobile.locator('.navbar-toggler');
     assert.ok(await toggle.isVisible(),'Original site should show mobile navbar toggle');
@@ -54,6 +77,6 @@ async function checkNoOverflow(page,label){
     await mobile.waitForTimeout(450);
     assert.ok(!(await mobile.locator('#navbarNav').isVisible()),'Mobile navbar should close after selection');
     assert.deepEqual(errors,[],'Unexpected page JavaScript errors');
-    console.log('PASS: personal site, five images, contact links, mobile menu, Upwork-safe content, four tabs, no horizontal overflow, and five screenshot exports');
+    console.log('PASS: project cards, semantic structure, truthful sample disclaimer, loaded images, six skills, valid anchors, dark-theme persistence, mobile navigation, Upwork-safe tabs, no horizontal overflow, and five screenshot exports');
   } finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
