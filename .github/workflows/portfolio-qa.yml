@@ -11,6 +11,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: portfolio-qa-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test-and-export:
     runs-on: ubuntu-24.04
@@ -32,5 +35,14 @@ jobs:
           git add showcase-shots/
           if ! git diff --cached --quiet; then
             git commit -m "Export verified Upwork portfolio preview screenshots"
-            git push
+            for attempt in 1 2 3; do
+              git fetch origin main
+              if git rebase origin/main && git push origin HEAD:main; then
+                exit 0
+              fi
+              git rebase --abort || true
+              sleep 3
+            done
+            echo "Could not publish screenshots after three attempts" >&2
+            exit 1
           fi
