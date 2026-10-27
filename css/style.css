@@ -45,7 +45,7 @@ a:hover { color:var(--accent-strong); }
 .custom-btn.custom-btn-bg:hover { background:#404e63; color:#fff; }
 .custom-btn-outline:hover { border-color:#d29a03; background:#fff3cc; color:#4a3d15; }
 .about-image { display:flex; justify-content:center; align-items:flex-end; background:linear-gradient(135deg,#eff2f6,#fff6d7); border-radius:40px 40px 110px 40px; min-height:325px; overflow:hidden; }
-.about-image img { object-fit:contain; max-height:470px; width:auto; filter:drop-shadow(0 12px 22px rgba(22,30,43,.08)); }
+.about-image img { display:block; object-fit:contain; width:min(100%,320px); height:auto; max-height:400px; border-radius:20px 20px 0 0; box-shadow:0 12px 26px rgba(22,30,43,.09); }
 /* Introduction */
 .container-about { max-width:1190px; margin:0 auto; padding:0 16px; }
 .about-me { width:100%; padding:43px clamp(24px,5vw,62px); margin:38px 0 20px; background:var(--surface); border:1px solid var(--line); border-radius:23px; box-shadow:var(--shadow); }
@@ -132,7 +132,7 @@ body.dark-mode { color-scheme:dark; --canvas:#141b26; --surface:#202c3a; --ink:#
 @media(max-width:991px) {
   .about { padding:60px 0 70px; }
   .about-image { margin:35px auto 0; max-width:560px; min-height:250px; }
-  .about-image img { max-height:400px; }
+  .about-image img { max-height:370px; }
   .navbar-collapse { padding:14px 8px 8px; background:var(--surface); }
   .navbar .navbar-nav { align-items:stretch; gap:4px; }
   .navbar .nav-link { display:block; text-align:left; }
@@ -155,7 +155,7 @@ body.dark-mode { color-scheme:dark; --canvas:#141b26; --surface:#202c3a; --ink:#
   .hero-signature { font-size:.93rem; }
   .intro-copy { font-size:.97rem; }
   .about-image { min-height:210px; border-radius:24px 24px 65px 24px; }
-  .about-image img { max-height:290px; }
+  .about-image img { max-height:290px; width:min(80%,260px); }
   .small-text { font-size:.62rem; }
   .project-gallery,.skills-list { grid-template-columns:1fr; }
   .study-card img { height:auto; max-height:285px; object-fit:contain; background:var(--canvas); }
